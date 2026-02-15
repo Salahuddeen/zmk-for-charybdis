@@ -1,18 +1,17 @@
-# Charybdis ZMK Keymap
+# Charybdis ZMK Keymap (Miryoku 3x5 Core Match)
 
-This file mirrors the current key definitions in `config/charybdis.keymap`.
+Reference generated from `config/charybdis.keymap`.
 
-## Legend
-- `trans`: transparent (falls through)
-- `none`: no action
-- `mt MOD KEY`: mod-tap
-- `lt LAYER KEY`: layer-tap (hold = layer, tap = key)
+## Core conventions
+- 3x5 core per hand matches Miryoku layer roles.
+- Thumb taps match Miryoku: left `Esc/Space/Tab`, right `Enter/Backspace/Delete`.
+- Non-core Charybdis keys remain as configured in the keymap.
 
-## Layer index
+## Layer map
 - `0` Base (Colemak-DH)
 - `1` Extra
 - `2` Tap
-- `3` Button (includes Bluetooth controls)
+- `3` Button
 - `4` Nav
 - `5` Mouse
 - `6` Media
@@ -20,116 +19,57 @@ This file mirrors the current key definitions in `config/charybdis.keymap`.
 - `8` Sym
 - `9` Fun
 
-## Layer 0 (Base)
-```text
-R0: ESC  N1  N2  N3  N4  N5  N6  N7  N8  N9  N0  BSPC
-R1: TAB  Q   W   F   P   B   J   L   U   Y   SQT BSLH
-R2: LSFT mt(LGUI,A) mt(LALT,R) mt(LCTRL,S) mt(LSHFT,T) G  M  mt(RSHFT,N) mt(RCTRL,E) mt(RALT,I) mt(RGUI,O) SQT
-R3: lt(3,Z) mt(RALT,X) C D V B K H COMMA mt(RALT,DOT) lt(3,SLASH) MINUS
-T : LEFT_WIN  lt(4,SPACE)  lt(5,TAB)  lt(7,ENTER)  GRAVE
-M : MB1 MB2 ENTER
-Trackball: tmv_coarse
-```
+## Layer 0 Base core
+Top: `Q W F P B` | `J L U Y SQT`
+Home: `mt(LGUI,A) mt(LALT,R) mt(LCTRL,S) mt(LSHFT,T) G` | `M mt(RSHFT,N) mt(RCTRL,E) mt(RALT,I) mt(RGUI,O)`
+Bottom: `lt(3,Z) mt(RALT,X) C D V` | `K H COMMA mt(RALT,DOT) lt(3,SLASH)`
+Thumb taps: `Esc Space Tab` | `Enter Backspace Delete`
 
-## Layer 1 (Extra)
-```text
-R0: trans ... trans
-R1: trans Q W E R T Y U I O P trans
-R2: trans mt(LGUI,A) mt(LALT,S) mt(LCTRL,D) mt(LSHFT,F) G H mt(RSHFT,J) mt(RCTRL,K) mt(RALT,L) mt(RGUI,SEMI) trans
-R3: trans lt(3,Z) mt(RALT,X) C V B N M COMMA mt(RALT,DOT) lt(3,SLASH) trans
-T : trans trans trans trans trans
-M : trans trans trans
-Trackball: tsl
-```
+## Layer 1 Extra core
+Top: `Q W E R T` | `Y U I O P`
+Home: `mt(LGUI,A) mt(LALT,S) mt(LCTRL,D) mt(LSHFT,F) G` | `H mt(RSHFT,J) mt(RCTRL,K) mt(RALT,L) mt(RGUI,SQT)`
+Bottom: `lt(3,Z) mt(RALT,X) C V B` | `N M COMMA mt(RALT,DOT) lt(3,SLASH)`
 
-## Layer 2 (Tap)
-```text
-R0: trans ... trans
-R1: trans Q W F P B J L U Y SQT trans
-R2: trans A R S T G M N E I O trans
-R3: trans Z X C D V K H COMMA DOT SLASH trans
-T : trans trans trans trans trans
-M : trans trans trans
-Trackball: tsl
-```
+## Layer 2 Tap core
+Top: `Q W F P B` | `J L U Y SQT`
+Home: `A R S T G` | `M N E I O`
+Bottom: `Z X C D V` | `K H COMMA DOT SLASH`
 
-## Layer 3 (Button)
-```text
-R0: trans ... trans
-R1: trans none none none none none none none none none none trans
-R2: trans LGUI LALT LCTRL LSHFT none LEFT DOWN UP RIGHT none trans
-R3: trans none RALT mo(8) mo(7) BT_CLR BT_SEL0 BT_SEL1 BT_SEL2 BT_SEL3 BT_NXT trans
-T : trans trans trans trans trans
-M : trans trans trans
-Trackball: tsl
-```
+## Layer 3 Button core
+Top: `LS(DEL) LC(INS) LS(INS) none none` | `none LS(INS) LC(INS) LS(DEL) none`
+Home: `LGUI LALT LCTRL LSHFT none` | `none LSHFT LCTRL LALT LGUI`
+Bottom: `none LS(DEL) LC(INS) LS(INS) none` | `none LS(INS) LC(INS) LS(DEL) none`
 
-## Layer 4 (Nav)
-```text
-R0: trans ... trans
-R1: trans LGUI LALT LCTRL LSHFT none LEFT DOWN UP RIGHT CAPS trans
-R2: trans none RALT mo(7) mo(4) none HOME PG_DN PG_UP END INS trans
-R3: trans none none none none none ENTER BSPC DEL none none trans
-T : trans trans trans trans trans
-M : trans trans trans
-Trackball: tsl
-```
+## Layer 4 Nav core
+Top: `bootloader to(2) to(1) to(0) none` | `LC(Y) LC(V) LC(C) LC(X) LC(Z)`
+Home: `LGUI LALT LCTRL LSHFT none` | `caps_word LEFT DOWN UP RIGHT`
+Bottom: `none RALT to(7) to(4) none` | `INS HOME PG_DN PG_UP END`
 
-## Layer 5 (Mouse)
-```text
-R0: trans ... trans
-R1: trans none none none none none MS_LEFT MS_DOWN MS_UP MS_RIGHT none trans
-R2: trans LGUI LALT LCTRL LSHFT none C_PREV C_VOL_DN C_VOL_UP C_NEXT none trans
-R3: trans none RALT mo(8) mo(5) none WH_LEFT WH_DOWN WH_UP WH_RIGHT none trans
-T : trans trans trans trans trans
-M : trans trans trans
-Trackball: tsl
-```
+## Layer 5 Mouse core
+Top: `bootloader to(2) to(1) to(0) none` | `LC(Y) LC(V) LC(C) LC(X) LC(Z)`
+Home: `LGUI LALT LCTRL LSHFT none` | `none LEFT DOWN UP RIGHT`
+Bottom: `none RALT to(8) to(5) none` | `none none PG_DN PG_UP none`
 
-## Layer 6 (Media)
-```text
-R0: trans ... trans
-R1: trans LGUI LALT LCTRL LSHFT none C_PREV C_VOL_DN C_VOL_UP C_NEXT none trans
-R2: trans none RALT mo(9) mo(6) none C_STOP C_PP C_MUTE none none trans
-R3: trans none none none none none none none none none none trans
-T : trans trans trans trans trans
-M : trans trans trans
-Trackball: tsl
-```
+## Layer 6 Media core
+Top: `bootloader to(2) to(1) to(0) none` | `none none none none none`
+Home: `LGUI LALT LCTRL LSHFT none` | `none C_PREV C_VOL_DN C_VOL_UP C_NEXT`
+Bottom: `none RALT to(9) to(6) none` | `none none none none none`
 
-## Layer 7 (Num)
-```text
-R0: trans ... trans
-R1: trans GRAVE N1 N2 N3 BSLH LBKT N7 N8 N9 RBKT trans
-R2: trans LGUI LALT LCTRL LSHFT none EQUAL N4 N5 N6 SEMI trans
-R3: trans none RALT mo(4) mo(7) none BSLH N1 N2 N3 GRAVE trans
-T : trans trans trans trans trans
-M : trans trans trans
-Trackball: tsl
-```
+## Layer 7 Num core
+Top: `LEFT_BRACKET N7 N8 N9 RIGHT_BRACKET` | `none to(0) to(1) to(2) bootloader`
+Home: `SEMI N4 N5 N6 EQUAL` | `none LSHFT LCTRL LALT LGUI`
+Bottom: `GRAVE N1 N2 N3 BSLH` | `none to(7) to(4) RALT none`
 
-## Layer 8 (Sym)
-```text
-R0: trans ... trans
-R1: trans LBKT AMPS STAR LPAR RBKT UNDER LPAR RPAR MINUS PLUS trans
-R2: trans LGUI LALT LCTRL LSHFT none PLUS DLLR PRCNT CARET COLON trans
-R3: trans none RALT mo(9) mo(8) none PIPE EXCL AT HASH TILDE trans
-T : trans trans trans trans trans
-M : trans trans trans
-Trackball: tsl
-```
+## Layer 8 Sym core
+Top: `LS(LEFT_BRACKET) AMPS STAR LPAR LS(RIGHT_BRACKET)` | `none to(0) to(1) to(2) bootloader`
+Home: `LS(SEMI) DLLR PRCNT CARET PLUS` | `none LSHFT LCTRL LALT LGUI`
+Bottom: `TILDE EXCL AT HASH PIPE` | `none to(8) to(5) RALT none`
 
-## Layer 9 (Fun)
-```text
-R0: trans ... trans
-R1: trans F12 F7 F8 F9 PSCRN C_PREV C_VOL_DN C_VOL_UP C_NEXT F10 trans
-R2: trans LGUI LALT LCTRL LSHFT none C_STOP C_PP C_MUTE PAUSE_BREAK F11 trans
-R3: trans none RALT mo(8) mo(9) none TAB SPACE K_APP none none trans
-T : trans trans trans trans trans
-M : trans trans trans
-Trackball: tsl
-```
+## Layer 9 Fun core
+Top: `F12 F7 F8 F9 PSCRN` | `none to(0) to(1) to(2) bootloader`
+Home: `F11 F4 F5 F6 none` | `none LSHFT LCTRL LALT LGUI`
+Bottom: `F10 F1 F2 F3 PAUSE_BREAK` | `none to(9) to(6) RALT none`
 
-## Notes
-- Extra/non-core keys are transparent on non-base layers.
-- Bluetooth controls are on Layer 3 (Button layer).
+## Trackball
+- Layer `0`: `tmv_coarse`
+- Layers `1-9`: `tsl`
