@@ -82,9 +82,9 @@
         layer_5 {
             bindings = <
 &trans          &trans      &trans      &trans       &trans      &trans       &trans        &trans       &trans       &trans             &trans       &trans
-&trans          &none       &none       &none        &none       &none        &kp MS_LEFT   &kp MS_DOWN  &kp MS_UP    &kp MS_RIGHT       &none        &trans
+&trans          &none       &none       &none        &none       &none        &kp LEFT      &kp DOWN     &kp UP       &kp RIGHT          &none        &trans
 &trans          &kp LGUI    &kp LALT    &kp LCTRL    &kp LSHFT   &none        &kp C_PREV    &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT         &none        &trans
-&trans          &none       &kp RALT    &mo 8        &mo 5       &none        &kp WH_LEFT   &kp WH_DOWN  &kp WH_UP    &kp WH_RIGHT       &none        &trans
+&trans          &none       &kp RALT    &mo 8        &mo 5       &none        &kp HOME      &kp PG_DN    &kp PG_UP    &kp END            &none        &trans
                                 &trans      &trans      &trans       &trans       &trans
                                               &trans      &trans       &trans
             >;
@@ -121,8 +121,8 @@
         layer_8 {
             bindings = <
 &trans          &trans      &trans      &trans       &trans      &trans       &trans        &trans       &trans       &trans             &trans       &trans
-&trans          &kp LBKT    &kp AMPS    &kp STAR     &kp LPAR    &kp RBKT     &kp UNDER     &kp LPAR     &kp RPAR     &kp MINUS          &kp PLUS     &trans
-&trans          &kp LGUI    &kp LALT    &kp LCTRL    &kp LSHFT   &none        &kp PLUS      &kp DLLR     &kp PRCNT    &kp CARET          &kp COLON    &trans
+&trans          &kp LEFT_BRACKET    &kp AMPS    &kp STAR     &kp LPAR    &kp RIGHT_BRACKET     &kp UNDER     &kp LPAR     &kp RPAR     &kp MINUS          &kp PLUS     &trans
+&trans          &kp LGUI    &kp LALT    &kp LCTRL    &kp LSHFT   &none        &kp PLUS      &kp DLLR     &kp PRCNT    &kp CARET          &kp SEMI     &trans
 &trans          &none       &kp RALT    &mo 9        &mo 8       &none        &kp PIPE      &kp EXCL     &kp AT       &kp HASH           &kp TILDE    &trans
                                 &trans      &trans      &trans       &trans       &trans
                                               &trans      &trans       &trans
